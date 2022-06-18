@@ -1,0 +1,158 @@
+:root {
+  font-size: 62.5%; /* -> 1rem = 10px | 100% -> 1rem = 16px */
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Press Start 2P", cursive;
+  background: #131313;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+.ri-voiceprint-fill.top {
+  position: absolute;
+  font-size: 28rem;
+  top: -2rem;
+  right: -9rem;
+  background: #ff00cc;
+  background: -webkit-linear-gradient(to left, #333399, #ff00cc);
+  background: linear-gradient(to left, #333399, #ff00cc);
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  z-index: -1;
+}
+
+.ri-voiceprint-fill.down {
+  position: absolute;
+  font-size: 28rem;
+  bottom: -2rem;
+  left: -9rem;
+  rotate: 180deg;
+  background: #ff00cc;
+  background: -webkit-linear-gradient(to left, #333399, #ff00cc);
+  background: linear-gradient(to left, #333399, #ff00cc);
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  z-index: -1;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background: #f7ff00;
+  background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
+  background: linear-gradient(to right, #db36a4, #f7ff00);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+.mensagem {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  margin-top: 1rem;
+}
+
+.box {
+  display: inline-block;
+  font-size: 3rem;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.ri-arrow-up-circle-fill,
+.ri-arrow-down-circle-fill {
+  font-size: 4.5rem;
+  margin: 2rem;
+  background: #ff00cc;
+  background: -webkit-linear-gradient(to left, #333399, #ff00cc);
+  background: linear-gradient(to left, #333399, #ff00cc);
+
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.btn-jogar {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-family: "Press Start 2P", cursive;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background: #ff00cc;
+  background: -webkit-linear-gradient(to left, #333399, #ff00cc);
+  background: linear-gradient(to left, #333399, #ff00cc);
+  border-radius: 0.5rem;
+  color: white;
+}
+
+.btn-jogar:hover {
+  cursor: pointer;
+}
+
+.container {
+  background: #131313;
+  padding: 4.5rem;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  border-radius: 10rem;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  width: 2.5rem;
+  height: 96rem;
+  left: 33.8rem;
+  top: -27rem;
+  background: #f7ff00;
+  animation: animate 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  border-radius: 10rem;
+  inset: 0.1rem;
+  background-color: #131313;
+  z-index: -1;
+}

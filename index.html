@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <title>Secret Number</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <i class="ri-voiceprint-fill top"></i>
+    <i class="ri-voiceprint-fill down"></i>
+    <section class="container">
+      <h1>Acerte o número secreto</h1>
+      <h3>
+        entre <span id="menor-valor">0</span> e
+        <span id="maior-valor">100</span>
+      </h3>
+      <div id="chute" class="mensagem">
+        <!-- <div>Você disse:</div>
+        <span class="box">20</span>
+        <div>
+          O número secreto é maior<i class="ri-arrow-up-circle-fill"></i>
+        </div> -->
+      </div>
+    </section>
+    <script src="app/secretNumber.js"></script>
+    <script src="app/speechRecognition.js"></script>
+    <script src="app/validation.js"></script>
+  </body>
+</html>
