@@ -1,3 +1,5 @@
+const win = new Audio("sounds/win.mp3");
+
 function analisarTranscricao(transcript) {
   const numero = parseInt(transcript);
 
@@ -29,6 +31,7 @@ let darDicaDeSeta = (numero) => {
 
 let transcricaoIgualAoNumeroSecreto = (numero) => {
   if (numero === numeroSecreto) {
+    win.play();
     return (document.body.innerHTML = `
     <h2>Parabéns, você acertou!</h2>
     <h3>O número secreto era ${numeroSecreto}</h3>
