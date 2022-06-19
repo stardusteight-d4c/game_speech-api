@@ -12,3 +12,4 @@ elementoMenorValor.innerHTML = menorValor;
 elementoMaiorValor.innerHTML = maiorValor;
 
 const numeroSecreto = gerarNumeroAleatorio();
+console.log(numeroSecreto);

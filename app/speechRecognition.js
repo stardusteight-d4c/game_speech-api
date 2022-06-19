@@ -1,4 +1,4 @@
-const elementoChute = document.getElementById("chute");
+const mensagem = document.getElementById("mensagem");
 
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 
@@ -8,19 +8,16 @@ recognition.start();
 
 recognition.addEventListener("result", onSpeak);
 
-function onSpeak(e) {
-  chute = e.results[0][0].transcript;
-  exibeChuteNaTela(chute);
-  verificaSeOChutePossuiUmValorValido(chute);
+function onSpeak(event) {
+  transcript = event.results[0][0].transcript;
+  exibirTranscricaoNaTela(transcript);
+  analisarTranscricao(transcript);
 }
 
-function exibeChuteNaTela(chute) {
-  elementoChute.innerHTML = `
-    <div>Você disse:</div>
-    <span class="box">${chute}</span>
+function exibirTranscricaoNaTela(transcript) {
+  mensagem.innerHTML = `
+    <span class="box">${transcript}</span>
     `;
 }
 
 recognition.addEventListener("end", () => recognition.start());
-
-console.log(numeroSecreto);

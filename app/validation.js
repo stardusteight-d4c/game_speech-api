@@ -1,10 +1,34 @@
-function verificaSeOChutePossuiUmValorValido(chute) {
-  const numero = +chute;
-  if (notAnumber(numero)) {
-    elementoChute.innerHTML += "<div>O número é inválido</div>";
-  } else if (numeroForaDoIntervalo(numero)) {
-    elementoChute.innerHTML += "<div>O número está fora do intervalo</div>";
-  } else if (verificaSeOChuteEhCorreto(numero)) {
+function analisarTranscricao(transcript) {
+  const numero = parseInt(transcript);
+
+  transcricaoSerNumero(numero);
+  numeroForaDoIntervalo(numero);
+  darDicaDeSeta(numero);
+  transcricaoIgualAoNumeroSecreto(numero);
+}
+
+let transcricaoSerNumero = (numero) => {
+  if (isNaN(numero)) {
+    return (mensagem.innerHTML += "<div>Por favor, fale um número!</div>");
+  }
+};
+
+let numeroForaDoIntervalo = (numero) => {
+  if (numero > maiorValor || numero < menorValor) {
+    return (mensagem.innerHTML += "<div>O número está fora do intervalo</div>");
+  }
+};
+
+let darDicaDeSeta = (numero) => {
+  if (numero > numeroSecreto) {
+    return (mensagem.innerHTML += "<i class='ri-arrow-down-s-line'></i>");
+  } else {
+    return (mensagem.innerHTML += "<i class='ri-arrow-up-s-line'></i>");
+  }
+};
+
+let transcricaoIgualAoNumeroSecreto = (numero) => {
+  if (numero === numeroSecreto) {
     return (document.body.innerHTML = `
     <h2>Parabéns, você acertou!</h2>
     <h3>O número secreto era ${numeroSecreto}</h3>
@@ -12,30 +36,8 @@ function verificaSeOChutePossuiUmValorValido(chute) {
       Jogar novamente
     </button>
     `);
-  } else if (numero > numeroSecreto) {
-    elementoChute.innerHTML += `
-    <div>
-      O número secreto é menor<i class="ri-arrow-down-circle-fill"></i>
-    </div>`;
-  } else {
-    elementoChute.innerHTML += `
-    <div>
-      O número secreto é maior<i class="ri-arrow-up-circle-fill"></i>
-    </div>`;
   }
-}
-
-function numeroForaDoIntervalo(numero) {
-  return numero > maiorValor || numero < menorValor;
-}
-
-function notAnumber(numero) {
-  return isNaN(numero);
-}
-
-function verificaSeOChuteEhCorreto(chute) {
-  return chute === numeroSecreto;
-}
+};
 
 document.body.addEventListener("click", (event) => {
   if (event.target.id == "jogar-novamente") {
